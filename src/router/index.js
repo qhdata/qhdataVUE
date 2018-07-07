@@ -12,6 +12,17 @@ export default new Router({
             component: resolve => require(['@/pages/home/main'], resolve),
         },
         {
+            path: '/icon',
+            component: resolve => require(['@/pages/icon/main'], resolve),
+            children: [
+                {
+                    path: 'icon-preview',
+                    components: resolve => require(['@/pages/icon/iconPreview'], resolve),
+                },
+            ],
+        },
+
+        {
             path: '/',
             redirect: '/home',
         },
